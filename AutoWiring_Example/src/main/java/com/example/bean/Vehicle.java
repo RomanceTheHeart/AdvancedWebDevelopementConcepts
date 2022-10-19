@@ -23,8 +23,15 @@ public class Vehicle {
     public void  destroy(){
         System.out.println("Destroying " + this.getName());
     }
-    public void PrintVehicleRegistry(){
+    public void PrintVehicleRegistry() {
         System.out.println("Vehicle Registry Number: " + this.name + " " + 2022);
 
     }
+    @Override
+    public String toString ()
+    {
+        return "Operator vehicle: " + name;
+    }
+
+
 }

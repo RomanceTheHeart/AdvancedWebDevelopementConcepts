@@ -1,11 +1,9 @@
 package com.gproject;
 
 
-import com.example.bean.Vehicle;
+import com.example.bean.Person;
 import com.example.config.ProjectConfig;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-
-
 
 public class Main {
 
@@ -25,9 +23,10 @@ emplace that gives some control back to the developer: such as the PostConstruct
  */
 
         var context = new AnnotationConfigApplicationContext(ProjectConfig.class);
-        Vehicle vehicle = context.getBean("vehicle", Vehicle.class); // get bean with more than one new (unique) object.
-        System.out.println("The Vehicle name associated with Spring context is : " + vehicle.getName());
-        vehicle.PrintVehicleRegistry();
+        Person person = context.getBean(Person.class);
+
+        System.out.println("The name associated with Spring context is : " + person.getName());
+        System.out.println("The Vehicle name associated with person : " + person.getVehicle());
         context.close();
 
     }
