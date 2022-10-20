@@ -1,6 +1,5 @@
 package com.example.bean;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
@@ -8,29 +7,16 @@ import javax.annotation.PreDestroy;
 
 
 @Component
-public class Vehicle {
+public class Tire {
     private String name;
 
-    private final Tire tire;
-    private final Stereo stereo;
-
-    @Autowired
-    public Vehicle(Tire tire, Stereo stereo) {
-        this.tire = tire;
-        this.stereo = stereo;
-    }
-
-
     public String getName(){return name;}
-    public Tire getTire(){return tire;}
-
-    public Stereo getStereo(){return stereo;}
 
     public void SetName(String name){this.name =name;}
 
     @PostConstruct
     public void initialize(){
-        this.name = "Lamborghini";
+        this.name = "Bridge Stone";
     }
 
     @PreDestroy
@@ -38,7 +24,7 @@ public class Vehicle {
         System.out.println("Destroying " + this.getName());
     }
     public void PrintVehicleRegistry() {
-        System.out.println("Vehicle Registry Number: " + this.name + " " + 2022);
+        System.out.println("TireRegistry Number: " + this.name + " " + 2022);
 
     }
     @Override
